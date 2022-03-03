@@ -14,7 +14,19 @@ const selectById = (id: number) =>
     state.find((p) => p.id === id)
   );
 
+const selectLoadStatus = createSelector(
+  selectCustomerState,
+  (state) => state.loadStatus
+);
+
+const isLoaded = createSelector(
+  selectLoadStatus,
+  (loadStatus) => loadStatus === 'LOADED'
+);
+
 export const fromCustomer = {
   selectAll,
   selectById,
+  selectLoadStatus,
+  isLoaded,
 };

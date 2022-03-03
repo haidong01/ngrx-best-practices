@@ -32,7 +32,6 @@ export class CustomerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.dispatch(CustomerActions.load());
     if (this.route.snapshot.data.mode === 'new') {
       this.customer$ = of({
         id: 0,
